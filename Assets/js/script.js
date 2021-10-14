@@ -22,12 +22,12 @@
 
 var charLower=["a","b","c","d","e","f","g","h","i","j"]
 var charUpper=["A","B","C","D","E","F","G","H","I","J"]
-var charNum=[1,2,3,4,5,6,78,9,0]
+var charNumber=["1","2","3","4","5","6","7","8","9","0"]
 var charSpecial=["!","@","#","$","%","^","&","*","(",")","?","~"]
 
 var randUpper = charUpper[Math.floor(Math.random()*charUpper.length)];
 var randLower = charLower[Math.floor(Math.random()*charLower.length)];
-var randNum = charNum[Math.floor(Math.random()*charNum.length)];
+var randNumber = charNumber[Math.floor(Math.random()*charNumber.length)];
 var randSpecial = charSpecial[Math.floor(Math.random()*charSpecial.length)];
 
 
@@ -40,6 +40,13 @@ for (var i = 0; i < randLower.length; i++) {
     console.log(randLower[i]);
 }
 
+for (var i = 0; i < randNumber.length; i++) {
+    console.log(randNumber[i]);
+}
+
+for (var i = 0; i < randSpecial.length; i++) {
+    console.log(randSpecial[i]);
+}
 
 //code below was given
 
