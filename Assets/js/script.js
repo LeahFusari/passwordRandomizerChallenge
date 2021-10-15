@@ -10,6 +10,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
     var promptLength = prompt("Enter Number of characters between 8-128.");
+    var finalPassword = ""
     // console.log(promptLength);
 
     if (promptLength < 8 || promptLength > 128) {
@@ -44,7 +45,7 @@ function generatePassword() {
 
     //use for loop to randomly get the elements from the allPossible array as many times as the user selects.
     for (var i = 0; i < promptLength; i++) {
-        finalPassword = allPossible[Math.floor(Math.random()*allPossible.length)];
+        finalPassword += allPossible[Math.floor(Math.random()*allPossible.length)];
       }
       return finalPassword;
 }
@@ -61,4 +62,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
