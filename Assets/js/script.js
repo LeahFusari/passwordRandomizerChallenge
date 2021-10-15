@@ -7,14 +7,16 @@ var intNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 // button variable assigned by selcecting the ID for the button
 var generateBtn = document.querySelector("#generate");
+var resetBtn = document.querySelector("#reset");
+var textarea = document.querySelector("#password");
 
 function generatePassword() {
     var promptLength = prompt("Enter Number of characters between 8-128.");
     var finalPassword = ""
-    // console.log(promptLength);
 
-    if (promptLength < 8 || promptLength > 128) {
+    if (promptLength < 8 || promptLength > 128 ) {
         alert("You must choose a number between 8 and 128");
+        document.querySelector("#password").reset();
         return
     }
     
@@ -41,7 +43,11 @@ function generatePassword() {
         allPossible = allPossible.concat(intNumber)
     }
 
-    console.log(allPossible);
+    if (!confirmLower && !confirmUpper && !confirmSpecial && !confirmNumber) {
+        alert("Pleaes choose at least one character option!");
+        document.querySelector("#password").reset();
+    return
+    }
 
     //use for loop to randomly get the elements from the allPossible array as many times as the user selects.
     for (var i = 0; i < promptLength; i++) {
@@ -55,10 +61,20 @@ function generatePassword() {
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-
+    
     passwordText.value = password;
+    return
 }
 
+function clearTextArea(){
+    var passwordText = document.querySelector("#password");
+
+    passwordText = "xyz";
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+resetBtn.addEventListener("click", clearTextArea);
+
+
