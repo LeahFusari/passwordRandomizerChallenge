@@ -21,7 +21,7 @@ function generatePassword() {
         }
 
      if(isNaN(promptLength)){
-            alert("You must choose a NUMBER between 8 and 128");
+            alert("You must choose a NUMBER between 8 and 128! Click GENERATE PASSWORD again.");
             return (" ")
         }
     
@@ -52,7 +52,7 @@ function generatePassword() {
 
         // Validation that at least one character type was chosen.
         if (!confirmLower && !confirmUpper && !confirmSpecial && !confirmNumber) {
-            alert("Please choose at least one character option!");
+            alert("Please choose at least one character option!  Click GENERATE PASSWORD again.");
             
             return (" ")
         }
